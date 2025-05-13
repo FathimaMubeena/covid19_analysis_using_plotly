@@ -1,0 +1,6 @@
+plotly
+nbformat
+plotly.express
+polars
+polars.selectors
+pandas
