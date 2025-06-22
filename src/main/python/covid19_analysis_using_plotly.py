@@ -128,8 +128,5 @@ def main():
     fig.update_traces(width=0.3, textfont_size=12, textangle=0, textposition='inside')
     fig.show()
 
-
-
-
 if __name__ == "__main__":
     main()
