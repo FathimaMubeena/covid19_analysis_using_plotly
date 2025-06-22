@@ -129,13 +129,15 @@ app = Dash(__name__)
 # relative to where this script is run. You might need to adjust this path.
 # In a real deployment, you'd manage data location more robustly.
 current_dir = os.path.dirname(__file__)
-parent_dir = os.path.dirname(current_dir)
-print(f"Current directory: {current_dir} and parent directory: {parent_dir} ")
-# file_path = os.path.join(parent_dir, 'resources', 'covid_19_deaths.csv')
+parent_dir = os.path.dirname(os.getcwd())  # This resolves to `/` in the container
+data_directory = os.path.join(parent_dir, 'resources')
+print(f"Data directory path: {data_directory}")
+file_path = os.path.join(data_directory, 'covid_19_deaths.csv')
+print(f"file path is: {file_path}")
 
-file_path = "/Users/fathimashaik/IdeaProjects/covid19_analysis_using_plotly/src/main/resources/covid_19_deaths.csv"
-# if not os.path.exists(os.path.join(current_dir, 'resources')):
-#     os.makedirs(os.path.join(current_dir, 'resources'))
+# file_path = "/Users/fathimashaik/IdeaProjects/covid19_analysis_using_plotly/src/main/resources/covid_19_deaths.csv"
+if not os.path.exists(os.path.join(parent_dir, 'resources')):
+    os.makedirs(os.path.join(current_dir, 'resources'))
 # Create a dummy CSV file for demonstration if it doesn't exist
 # In a real scenario, you would download the actual data.
 if not os.path.exists(file_path):

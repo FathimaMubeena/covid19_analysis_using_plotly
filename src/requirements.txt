@@ -2,9 +2,5 @@ plotly
 nbformat
 plotly.express
 polars
-polars.selectors
 pandas
-polars.selectors
-random
-us
 dash
